@@ -26,8 +26,8 @@ const RoundedImage = (props: ImageProps) => {
   return (
     <Image
       className="bg-gray-100 rounded dark:bg-black-600"
-      width={600}
-      height={400}
+      width={1200}
+      height={700}
       quality={75}
       alt=""
       {...props}

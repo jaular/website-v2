@@ -26,6 +26,8 @@ const ProjectsPage: NextPage = () => {
                   title={project.title}
                   href={project.href}
                   imageUrl={project.imageUrl}
+                  width={1600}
+                  height={812}
                 />
               ))}
             </div>
