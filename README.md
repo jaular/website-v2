@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# jaular.vercel.app
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Database**: [PlanetScale](https://planetscale.com)
+- **ORM**: [Prisma](https://prisma.io/)
+- **Deployment**: [Vercel](https://vercel.com)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+
 ## Getting Started
 
 First, run the development server:
