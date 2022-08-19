@@ -4,22 +4,21 @@ type Props = {
   title: string;
   href: string;
   imageUrl: string;
-  width?: number;
-  height?: number;
 };
 
-const Card = ({ title, href, imageUrl, width = 800, height = 400 }: Props) => {
+const Card = ({ title, href, imageUrl }: Props) => {
   return (
     <div className="relative group">
-      <Image
-        className="bg-gray-100 rounded dark:bg-black-600 group-hover:opacity-75"
-        src={imageUrl}
-        width={width}
-        height={height}
-        quality={75}
-        alt={title}
-        title={title}
-      />
+      <div className="aspect-w-2 aspect-h-1">
+        <Image
+          className="object-cover bg-gray-100 rounded dark:bg-black-600 group-hover:opacity-75"
+          src={imageUrl}
+          layout="fill"
+          quality={75}
+          alt={title}
+          title={title}
+        />
+      </div>
       <p className="pt-2 text-base font-semibold text-gray-800 dark:text-gray">
         <a
           className="focus:outline outline-offset-4 focus:outline-1 focus:outline-blue"
