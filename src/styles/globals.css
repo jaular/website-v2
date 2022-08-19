@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: optional;
+  src: url(/fonts/inter-var.woff2) format("woff2");
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply font-bold text-black dark:text-white scroll-mt-24;
+}
+.prose p {
+  @apply text-gray-800 dark:text-gray;
+}
+.prose strong {
+  @apply font-medium text-black dark:text-white;
+}
+.prose a {
+  @apply  font-normal text-gray-800 no-underline dark:text-gray hover:underline focus:underline focus:outline-none hover:text-blue dark:hover:text-blue focus:text-blue dark:focus:text-blue underline-offset-2 decoration-1;
+}
+.prose ::marker {
+  @apply text-gray-300 dark:text-gray-800;
+}
+.prose code {
+  @apply text-pink-600 dark:text-pink-400;
+}
+.prose pre {
+  @apply rounded bg-black-600 focus:outline focus:outline-1 focus:outline-blue;
+}
+
+prose > :first-child {
+  /* Override removing top margin, causing layout shift */
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6c809d;
+}
+
+.token.punctuation,
+.token.property-access {
+  color: #f8f8f2;
+}
+
+.token.number,
+.token.console.class-name {
+  color: #bd93f9;
+}
+
+.token.selector,
+.token.attr-name,
+.token.char,
+.token.inserted,
+.token.atrule,
+.token.method.function.property-access {
+  color: #50fa7b;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.punctuation.attr-equals,
+.token.interpolation-punctuation.punctuation {
+  color: #ff79c6;
+}
+
+.token.rule,
+.token.keyword,
+.token.tag {
+  color: #ff79c6;
+}
+
+.token.regex,
+.token.string,
+.token.important,
+.token.variable,
+.token.attr-value {
+  color: #f1fa8c;
+}
+
+.token.property,
+.token.builtin,
+.token.maybe-class-name,
+.token.class-name {
+  color: #8be9fd;
+}
+
+.code-line {
+  color: #f8f8f2;
+}
+
+.token.interpolation,
+.token.parameter {
+  color: #ffb86c;
+}
+
+.rehype-code-title {
+  background-color: #05060b;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  color: #f5f5f5;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.75rem 1.25rem;
+}
+
+.rehype-code-title + pre {
+  margin-top: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
