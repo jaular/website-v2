@@ -3,6 +3,7 @@ import useSWR from "swr";
 import { parseISO, format } from "date-fns";
 import { es } from "date-fns/locale";
 import fetcher from "~/lib/fetcher";
+import Spinner from "./Spinner";
 
 type Props = {
   title: string;
@@ -30,7 +31,7 @@ const BlogPost = ({ title, slug, publishedAt }: Props) => {
         </div>
         <div className="text-right">
           <p className="text-xs text-gray-800 dark:text-gray whitespace-nowrap">
-            {`${views >= 0 ? views.toLocaleString() : "---"} visitas`}
+            {views > 0 ? `${views.toLocaleString()} visitas` : <Spinner />}
           </p>
         </div>
       </div>
