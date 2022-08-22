@@ -1,6 +1,7 @@
 import type { ImageProps } from "next/image";
 import Image from "next/image";
 import Link from "next/link";
+import { ExternalLinkIcon } from "@heroicons/react/outline";
 
 type CustomLinkProps = {
   href: string;
@@ -19,7 +20,19 @@ const CustomLink = (props: CustomLinkProps) => {
     );
   }
 
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
+  return (
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center space-x-1"
+      {...props}
+    >
+      <span>{children}</span>
+      <span>
+        <ExternalLinkIcon className="w-4 h-4" />
+      </span>
+    </a>
+  );
 };
 
 const RoundedImage = (props: ImageProps) => {
