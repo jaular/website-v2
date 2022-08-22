@@ -1,5 +1,5 @@
-import type { ImageProps } from "next/image";
-import Image from "next/image";
+import type { ImageProps } from "next/future/image";
+import Image from "next/future/image";
 import Link from "next/link";
 
 type CustomLinkProps = {
