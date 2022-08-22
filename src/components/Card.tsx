@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import Image from "next/image";
 
 type Props = {
   title: string;
@@ -16,7 +16,7 @@ const Card = ({ title, href, imageSrc }: Props) => {
   return (
     <div className="relative group">
       <Image
-        className="h-auto max-w-full bg-gray-100 rounded  dark:bg-black-600 group-hover:opacity-75"
+        className="object-cover bg-gray-100 rounded dark:bg-black-600 group-hover:opacity-75"
         src={imageSrc}
         placeholder="blur"
         quality={75}
