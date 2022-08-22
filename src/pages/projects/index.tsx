@@ -1,10 +1,13 @@
-import type { NextPage } from "next";
+import type { InferGetStaticPropsType, NextPage } from "next";
 import { Suspense } from "react";
+import { getPlaiceholder } from "plaiceholder";
 import Container from "~/components/Container";
 import Card from "~/components/Card";
-import { projects } from "~/data/projects";
+import { projects as projectsData } from "~/data/projects";
 
-const ProjectsPage: NextPage = () => {
+const ProjectsPage: NextPage<
+  InferGetStaticPropsType<typeof getStaticProps>
+> = ({ projects }) => {
   return (
     <Container
       title="José Aular | Proyectos"
@@ -25,7 +28,7 @@ const ProjectsPage: NextPage = () => {
                   key={project.title}
                   title={project.title}
                   href={project.href}
-                  imageUrl={project.imageUrl}
+                  imageSrc={project.imageSrc}
                 />
               ))}
             </div>
@@ -44,6 +47,30 @@ const ProjectsPage: NextPage = () => {
       </div>
     </Container>
   );
+};
+
+export const getStaticProps = async () => {
+  const projects = await Promise.all(
+    projectsData.map(async (item) => {
+      const { base64, img } = await getPlaiceholder(item.imageUrl, {
+        size: 32,
+      });
+      return {
+        title: item.title,
+        href: item.href,
+        imageSrc: {
+          ...img,
+          blurDataURL: base64,
+        },
+      };
+    })
+  ).then((values) => values);
+
+  return {
+    props: {
+      projects,
+    },
+  };
 };
 
 export default ProjectsPage;

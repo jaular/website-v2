@@ -1,24 +1,28 @@
-import Image from "next/image";
+import Image from "next/future/image";
 
 type Props = {
   title: string;
   href: string;
-  imageUrl: string;
+  imageSrc: {
+    blurDataURL: string;
+    src: string;
+    height: number;
+    width: number;
+    type?: string | undefined;
+  };
 };
 
-const Card = ({ title, href, imageUrl }: Props) => {
+const Card = ({ title, href, imageSrc }: Props) => {
   return (
     <div className="relative group">
-      <div className="aspect-w-2 aspect-h-1">
-        <Image
-          className="object-cover bg-gray-100 rounded dark:bg-black-600 group-hover:opacity-75"
-          src={imageUrl}
-          layout="fill"
-          quality={75}
-          alt={title}
-          title={title}
-        />
-      </div>
+      <Image
+        className="h-auto max-w-full bg-gray-100 rounded  dark:bg-black-600 group-hover:opacity-75"
+        src={imageSrc}
+        placeholder="blur"
+        quality={75}
+        alt={title}
+        title={title}
+      />
       <p className="pt-2 text-base font-semibold text-gray-800 dark:text-gray">
         <a
           className="focus:outline outline-offset-4 focus:outline-1 focus:outline-blue"

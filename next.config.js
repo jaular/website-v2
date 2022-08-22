@@ -1,27 +1,30 @@
 const { withContentlayer } = require("next-contentlayer");
+const { withPlaiceholder } = require("@plaiceholder/next");
 
 /** @type {import('next').NextConfig} */
 
-module.exports = withContentlayer({
-  swcMinify: true,
-  reactStrictMode: true,
-  images: {
-    domains: ["images.unsplash.com", "res.cloudinary.com"],
-  },
-  experimental: {
-    legacyBrowsers: false,
-    browsersListForSwc: true,
-    images: { allowFutureImage: true },
-  },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: securityHeaders,
-      },
-    ];
-  },
-});
+module.exports = withContentlayer(
+  withPlaiceholder({
+    swcMinify: true,
+    reactStrictMode: true,
+    images: {
+      domains: ["images.unsplash.com", "res.cloudinary.com"],
+    },
+    experimental: {
+      legacyBrowsers: false,
+      browsersListForSwc: true,
+      images: { allowFutureImage: true },
+    },
+    async headers() {
+      return [
+        {
+          source: "/(.*)",
+          headers: securityHeaders,
+        },
+      ];
+    },
+  })
+);
 
 // https://nextjs.org/docs/advanced-features/security-headers
 const ContentSecurityPolicy = `
