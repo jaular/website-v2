@@ -53,7 +53,7 @@ export const getStaticProps = async () => {
   const projects = await Promise.all(
     projectsData.map(async (item) => {
       const { base64, img } = await getPlaiceholder(item.imageUrl, {
-        size: 16,
+        size: 10,
       });
       return {
         title: item.title,
