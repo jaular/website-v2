@@ -9,15 +9,11 @@ const Custom404: NextPage = () => {
         <h1 className="text-4xl font-bold sm:text-5xl">
           No se pudo encontrar esta página
         </h1>
-        <div className="flex flex-col flex-none w-full mx-auto space-y-4 sm:w-auto sm:flex-row sm:items-start sm:space-y-0 sm:space-x-5">
-          <div>
-            <Link href="/">
-              <a className="flex items-center justify-center w-full px-8 py-2 text-sm font-medium text-white rounded outline-none bg-blue hover:opacity-75 focus:opacity-75">
-                <span>Inicio</span>
-              </a>
-            </Link>
-          </div>
-        </div>
+        <Link href="/">
+          <a className="inline-flex items-center justify-center w-full px-8 py-2 text-sm font-medium text-white rounded outline-none sm:w-auto bg-blue hover:opacity-75 focus:opacity-75">
+            <span>Regresar</span>
+          </a>
+        </Link>
       </div>
     </Container>
   );

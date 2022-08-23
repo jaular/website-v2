@@ -1,12 +1,8 @@
 import type { ImageProps } from "next/image";
+import type { CustomLinkProps } from "~/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import { ExternalLinkIcon } from "@heroicons/react/outline";
-
-type CustomLinkProps = {
-  href: string;
-  children: React.ReactNode;
-} & React.HTMLProps<HTMLAnchorElement>;
 
 const CustomLink = (props: CustomLinkProps) => {
   const { href, children } = props;
@@ -35,7 +31,7 @@ const CustomLink = (props: CustomLinkProps) => {
   );
 };
 
-const RoundedImage = (props: ImageProps) => {
+const CustomImage = (props: ImageProps) => {
   return (
     <Image
       className="bg-gray-100 rounded dark:bg-black-600"
@@ -49,7 +45,7 @@ const RoundedImage = (props: ImageProps) => {
 };
 
 const MDXComponents = {
-  Image: RoundedImage,
+  Image: CustomImage,
   a: CustomLink,
 };
 

@@ -1,18 +1,7 @@
+import type { CardProps } from "~/lib/types";
 import Image from "next/image";
 
-type Props = {
-  title: string;
-  href: string;
-  imageSrc: {
-    blurDataURL: string;
-    src: string;
-    height: number;
-    width: number;
-    type?: string | undefined;
-  };
-};
-
-const Card = ({ title, href, imageSrc }: Props) => {
+const Card = ({ title, href, imageSrc }: CardProps) => {
   return (
     <div className="relative group">
       <Image
