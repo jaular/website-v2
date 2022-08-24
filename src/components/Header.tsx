@@ -1,7 +1,7 @@
 import type { NavigationProps } from "~/lib/types";
 import Link from "next/link";
 import { Disclosure } from "@headlessui/react";
-import { MenuAlt4Icon, XIcon } from "@heroicons/react/outline";
+import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import ThemeButton from "~/components/ThemeButton";
 
 const cn = (...classes: string[]) => {
@@ -34,7 +34,7 @@ const Header = ({ currentPage }: Props) => {
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="w-8 h-8 p-1 text-gray-800 rounded-md dark:text-gray bg-gray-200/50 dark:bg-black-600"
+                        className="w-8 h-8 p-1.5 text-gray-800 rounded dark:text-gray bg-gray-200/50 dark:bg-black-600"
                         viewBox="0 0 24 24"
                         strokeWidth="2"
                         stroke="currentColor"
@@ -78,12 +78,9 @@ const Header = ({ currentPage }: Props) => {
                 <Disclosure.Button className="inline-flex items-center justify-center ml-6 text-gray-800 dark:text-gray hover:text-black dark:hover:text-white focus:outline outline-offset-4 focus:outline-1 focus:outline-blue">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <XIcon className="block w-6 h-6" aria-hidden="true" />
+                    <XMarkIcon className="block w-6 h-6" aria-hidden="true" />
                   ) : (
-                    <MenuAlt4Icon
-                      className="block w-6 h-6"
-                      aria-hidden="true"
-                    />
+                    <Bars2Icon className="block w-6 h-6" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
               </div>

@@ -2,7 +2,7 @@ import type { ImageProps } from "next/image";
 import type { CustomLinkProps } from "~/lib/types";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLinkIcon } from "@heroicons/react/outline";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
 
 const CustomLink = (props: CustomLinkProps) => {
   const { href, children } = props;
@@ -25,7 +25,7 @@ const CustomLink = (props: CustomLinkProps) => {
     >
       <span>{children}</span>
       <span>
-        <ExternalLinkIcon className="w-4 h-4" />
+        <ArrowTopRightOnSquareIcon className="w-4 h-4" />
       </span>
     </a>
   );
