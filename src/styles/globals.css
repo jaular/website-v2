@@ -44,6 +44,10 @@
   @apply rounded bg-black-600 focus:outline focus:outline-1 focus:outline-blue;
 }
 
+.prose ul {
+  @apply list-square;
+}
+
 prose > :first-child {
   /* Override removing top margin, causing layout shift */
   margin-top: 1.25em !important;

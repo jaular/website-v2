@@ -8,6 +8,12 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
+    listStyleType: {
+      none: "none",
+      disc: "disc",
+      decimal: "decimal",
+      square: "square",
+    },
     extend: {
       colors: {
         white: "#F5F5F5",
