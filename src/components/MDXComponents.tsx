@@ -20,7 +20,7 @@ const CustomLink = (props: CustomLinkProps) => {
     <a
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center space-x-1"
+      className="inline-flex items-center space-x-0.5"
       {...props}
     >
       <span>{children}</span>
