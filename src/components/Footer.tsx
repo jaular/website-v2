@@ -51,9 +51,9 @@ const Footer = () => {
             </a>
           ))}
         </div>
-        <div className="mt-4 md:mt-0 md:order-1">
+        <div className="mt-3 md:mt-0 md:order-1">
           <p className="text-sm text-center text-gray-800 dark:text-gray">
-            Hecho con Next.js, Contentlayer y Tailwind CSS
+            © {new Date().getFullYear()} José Aular
           </p>
         </div>
       </div>
