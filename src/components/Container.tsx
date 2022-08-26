@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Header from "./Header";
 import Footer from "./Footer";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 interface Props extends CustomMetaProps {
   children: React.ReactNode;
@@ -60,6 +61,7 @@ const Container = ({ children, ...customMeta }: Props) => {
       <main className="w-full max-w-2xl px-4 mx-auto my-10 antialiased sm:px-6 md:my-12 lg:px-8">
         {children}
       </main>
+      <ScrollToTopButton />
       <Footer />
     </>
   );
