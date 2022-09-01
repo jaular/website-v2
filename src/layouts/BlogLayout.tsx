@@ -22,18 +22,17 @@ const BlogLayout = ({ post, children }: Props) => {
       <article className="space-y-8">
         <h1 className="text-4xl font-bold sm:text-5xl">{post.title}</h1>
 
-        <div className="space-y-1 md:space-y-0 md:flex md:justify-between">
+        <div className="flex justify-between">
           <div>
             <p className="text-sm text-gray-800 capitalize dark:text-gray">
-              José Aular |{" "}
-              {format(parseISO(post.publishedAt), "MMMM dd, yyyy", {
+              {format(parseISO(post.publishedAt), "MMM dd, yyyy", {
                 locale: es,
               })}
             </p>
           </div>
           <div>
             <p className="text-sm text-gray-800 dark:text-gray">
-              {post.readingTime.text.slice(0, -5)} de lectura {` | `}
+              {post.readingTime.text.slice(0, -5)} de lectura {` / `}
               <ViewCounter slug={post.slug} />
             </p>
           </div>

@@ -26,7 +26,7 @@ const BlogPost = ({ title, slug, publishedAt }: Props) => {
             </a>
           </Link>
           <p className="text-xs text-gray-800 capitalize dark:text-gray">
-            {format(parseISO(publishedAt), "MMMM dd, yyyy", { locale: es })}
+            {format(parseISO(publishedAt), "MMM dd, yyyy", { locale: es })}
           </p>
         </div>
         <div className="text-right">
