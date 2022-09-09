@@ -8,7 +8,6 @@ const Card = ({ title, href, imageSrc }: CardProps) => {
         className="object-cover bg-gray-100 rounded dark:bg-black-600 group-hover:opacity-75"
         src={imageSrc}
         placeholder="blur"
-        quality={75}
         alt={title}
         title={title}
         sizes="(max-width: 768px) 100vw,

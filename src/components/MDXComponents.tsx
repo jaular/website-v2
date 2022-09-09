@@ -36,8 +36,10 @@ const CustomImage = (props: ImageProps) => {
     <Image
       {...props}
       className="bg-gray-100 rounded dark:bg-black-600"
-      quality={75}
       alt={props.alt}
+      sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
     />
   );
 };
