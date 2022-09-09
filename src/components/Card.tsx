@@ -1,5 +1,5 @@
 import type { CardProps } from "~/lib/types";
-import Image from "next/image";
+import Image from "next/future/image";
 
 const Card = ({ title, href, imageSrc }: CardProps) => {
   return (

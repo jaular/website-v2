@@ -1,6 +1,6 @@
-import type { ImageProps } from "next/image";
+import type { ImageProps } from "next/future/image";
 import type { CustomLinkProps } from "~/lib/types";
-import Image from "next/image";
+import Image from "next/future/image";
 import Link from "next/link";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
 
@@ -34,12 +34,10 @@ const CustomLink = (props: CustomLinkProps) => {
 const CustomImage = (props: ImageProps) => {
   return (
     <Image
-      className="bg-gray-100 rounded dark:bg-black-600"
-      width={1200}
-      height={700}
-      quality={75}
-      alt=""
       {...props}
+      className="bg-gray-100 rounded dark:bg-black-600"
+      quality={75}
+      alt={props.alt}
     />
   );
 };
