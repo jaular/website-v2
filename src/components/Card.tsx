@@ -11,6 +11,9 @@ const Card = ({ title, href, imageSrc }: CardProps) => {
         quality={75}
         alt={title}
         title={title}
+        sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
       />
       <p className="pt-2 text-base font-semibold text-gray-800 dark:text-gray">
         <a
